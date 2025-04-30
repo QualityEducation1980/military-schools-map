@@ -1,0 +1,17 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  direction: rtl;
+  text-align: center;
+}
+h1 {
+  background-color: #283593;
+  color: white;
+  padding: 1rem;
+  margin: 0;
+}
+#map {
+  height: calc(100vh - 80px);
+  width: 100%;
+}

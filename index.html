@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>خريطة مدارس الثقافة العسكرية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>مدارس الثقافة العسكرية - الأردن</h1>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="schools.js"></script>
+  <script>
+    var map = L.map('map').setView([31.963158, 35.930359], 7);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    schools.forEach(function(school) {
+      L.marker([school.lat, school.lon])
+        .addTo(map)
+        .bindTooltip(`<strong>${school.name}</strong><br>${school.info}`, {direction: "top"});
+    });
+  </script>
+</body>
+</html>
